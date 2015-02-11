@@ -78,7 +78,7 @@ class HTTP::Server
           return upgrade_handler.call(io)
         end
 
-        break unless request.keep_alive?
+        break #unless request.keep_alive?
       end
     ensure
       ssl_sock.try &.close if @ssl
